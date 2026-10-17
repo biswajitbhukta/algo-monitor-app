@@ -36,7 +36,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   // Change this to your actual server IP and port (e.g., http://YOUR_SERVER_IP:8000)
   // Note: For Android emulators use 'http://10.0.2.2:8000', for real devices use your cloud server public IP.
-  final String serverUrl = "http://35.200.239.57:8000/status";
+  final String serverUrl = "https://busy-sloths-flow.loca.lt/status";
 
   Future<void> connectToServer() async {
     setState(() {
