@@ -133,23 +133,22 @@ class _DashboardScreenState extends State<DashboardScreen> {
             SizedBox(
               width: double.infinity,
               height: 50,
-              child: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF2C2C2C),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              ).wrap(
-                ElevatedButton(
-                  onPressed: isLoading ? null : connectToServer,
-                  child: isLoading
-                      ? const CircularProgressIndicator(color: Colors.greenAccent)
-                      : const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.refresh, color: Colors.greenAccent),
-                            SizedBox(width: 8),
-                            Text("Connect to Server", style: TextStyle(color: Colors.white, fontSize: 16)),
-                          ],
-                        ),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF2C2C2C),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 ),
+                onPressed: isLoading ? null : connectToServer,
+                child: isLoading
+                    ? const CircularProgressIndicator(color: Colors.greenAccent)
+                    : const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.refresh, color: Colors.greenAccent),
+                          SizedBox(width: 8),
+                          Text("Connect to Server", style: TextStyle(color: Colors.white, fontSize: 16)),
+                        ],
+                      ),
               ),
             ),
           ],
