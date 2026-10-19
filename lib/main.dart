@@ -46,7 +46,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     });
 
     try {
-      final response = await http.get(Uri.parse(serverUrl)).timeout(const Duration(seconds: 5));
+      final client = http.Client(); final response = await client.get(Uri.parse(serverUrl), headers: {"Connection": "close", "Cache-Control": "no-cache"}).timeout(const Duration(seconds: 15)); client.close();
 
       if (response.statusCode == 200) {
         setState(() {
